@@ -11,7 +11,7 @@ export interface ISlideProps {
 export const Slide = ({ title, right }: ISlideProps) => {
   return (
     <Container wWidth>
-      <TitleContainer right={right}>
+      <TitleContainer isRight={right}>
         <Title>{title}</Title>
       </TitleContainer>
     </Container>

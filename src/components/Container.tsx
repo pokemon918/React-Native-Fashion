@@ -1,4 +1,4 @@
-import styled from '@emotion/native';
+import { styled, View } from 'dripsy';
 import { height, width } from '@styles';
 
 interface IRowContainerProps {
@@ -13,7 +13,7 @@ interface IRowContainerProps {
   px?: number;
 }
 
-export const Container = styled.View(
+export const Container = styled(View)(
   ({
     row,
     wWidth,

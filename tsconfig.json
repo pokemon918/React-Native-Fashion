@@ -35,6 +35,10 @@
       "@styles*": ["src/styles*"],
       "@constants": ["src/constants"],
       "@constants*": ["src/constants*"],
+      "@helpers": ["src/helpers"],
+      "@helpers*": ["src/helpers*"],
+      "@hooks": ["src/hooks"],
+      "@hooks*": ["src/hooks*"],
     },
   },
 }

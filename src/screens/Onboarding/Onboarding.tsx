@@ -1,18 +1,22 @@
 import { width } from '@styles';
 import React from 'react';
 import Animated, {
+  scrollTo,
   interpolateColor,
+  runOnUI,
+  useAnimatedRef,
   useAnimatedScrollHandler,
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
 
-import { Slide, Subslide } from './components';
+import { Dot, Slide, Subslide } from './components';
 import {
   Container,
   Footer,
-  FooterInner,
+  Pagination,
   Slider,
+  SubslideContainer,
 } from './Onboarding.styles';
 
 const slides = [
@@ -47,6 +51,7 @@ const slides = [
 ];
 
 export const Onboarding = () => {
+  const scrollView = useAnimatedRef<Animated.ScrollView>();
   const x = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler({
     onScroll: ({ contentOffset }) => {
@@ -63,17 +68,24 @@ export const Onboarding = () => {
   const animatedFooter = useAnimatedStyle(() => ({
     transform: [{ translateX: -x.value }],
   }));
+  const scrollToPosition = (index: number) => {
+    return () => {
+      'worklet';
+      runOnUI(scrollTo)(scrollView, width * (index + 1), 0, true);
+    };
+  };
 
   return (
     <Container>
       <Slider style={animatedBackground}>
         <Animated.ScrollView
+          ref={scrollView}
           horizontal
           snapToInterval={width}
           decelerationRate="fast"
           showsHorizontalScrollIndicator={false}
           bounces={false}
-          scrollEventThrottle={1}
+          scrollEventThrottle={16}
           {...{ onScroll }}
         >
           {slides.map(({ title }, idx) => (
@@ -83,18 +95,25 @@ export const Onboarding = () => {
       </Slider>
 
       <Footer style={animatedBackground}>
-        <FooterInner
+        <Pagination>
+          {slides.map((_, index) => (
+            <Dot key={index} position={x} {...{ index }} />
+          ))}
+        </Pagination>
+
+        <SubslideContainer
           width={width * slides.length}
           style={animatedFooter}
         >
-          {slides.map(({ subtitle, description }, idx) => (
+          {slides.map(({ subtitle, description }, index) => (
             <Subslide
-              key={idx}
-              last={idx === slides.length - 1}
-              {...{ subtitle, description, x }}
+              key={index}
+              last={index === slides.length - 1}
+              onPress={scrollToPosition(index)}
+              {...{ subtitle, description }}
             />
           ))}
-        </FooterInner>
+        </SubslideContainer>
       </Footer>
     </Container>
   );

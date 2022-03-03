@@ -1,8 +1,8 @@
 import React from 'react';
+import { LoadAssets, ThemeManager } from '@components';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LoadAssets } from '@components';
-import { fonts } from '@styles';
 import { Onboarding } from '@screens';
+import { fonts } from '@styles';
 
 const AuthStack = createStackNavigator();
 function AuthNavigator() {
@@ -21,7 +21,9 @@ function AuthNavigator() {
 export default function App() {
   return (
     <LoadAssets {...{ fonts }}>
-      <AuthNavigator />
+      <ThemeManager>
+        <AuthNavigator />
+      </ThemeManager>
     </LoadAssets>
   );
 }

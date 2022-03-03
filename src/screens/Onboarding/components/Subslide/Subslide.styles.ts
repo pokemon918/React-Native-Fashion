@@ -1,16 +1,15 @@
-import styled from '@emotion/native';
+import { styled, Text } from 'dripsy';
 
-export const Subtitle = styled.Text({
+export const Subtitle = styled(Text)({
   textAlign: 'center',
   fontSize: 24,
-  fontFamily: 'SFProDisplay-Semibold',
-  color: '#0C0D34',
+  fontWeight: 'bold',
+  color: '$textDefault',
 });
-export const Description = styled.Text({
+export const Description = styled(Text)({
   marginTop: 12,
   textAlign: 'center',
   fontSize: 16,
   lineHeight: 24,
-  fontFamily: 'SFProDisplay-Regular',
-  color: '#0C0D34',
+  color: '$textDefault',
 });
