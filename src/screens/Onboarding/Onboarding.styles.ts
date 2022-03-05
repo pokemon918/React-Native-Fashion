@@ -1,17 +1,18 @@
-import { styled, View } from 'dripsy';
+import { styled } from 'dripsy';
 import Animated from 'react-native-reanimated';
 import { StyleSheet } from 'react-native';
+import { Container } from '@components';
+import { Radii } from '@constants';
 
-import { SLIDER_HEIGHT, BORDER_RADIUS } from './Onboarding.constants';
+import { SLIDER_HEIGHT } from './Onboarding.constants';
 
-export const Container = styled(View)({
-  flex: 1,
+export const ScreenContainer = styled(Container)({
   backgroundColor: 'white',
 });
 
 export const Slider = styled(Animated.View)({
   height: SLIDER_HEIGHT,
-  borderBottomRightRadius: BORDER_RADIUS,
+  borderBottomRightRadius: Radii.XL,
 });
 
 export const Footer = styled(Animated.View)({
@@ -32,7 +33,7 @@ export const SubslideContainer = styled(Animated.View)(
     width,
     flex: 1,
     flexDirection: 'row',
-    borderTopLeftRadius: BORDER_RADIUS,
+    borderTopLeftRadius: Radii.XL,
     backgroundColor: '$bg',
   }),
 );

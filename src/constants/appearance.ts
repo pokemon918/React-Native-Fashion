@@ -10,3 +10,9 @@ export enum Colors {
   RoseWhite = '#F4F0EF',
   Midnight = '#0C0D34',
 }
+export enum Radii {
+  S = 4,
+  M = 10,
+  L = 25,
+  XL = 75,
+}

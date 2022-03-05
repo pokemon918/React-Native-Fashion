@@ -1,7 +1,7 @@
-import React from 'react';
 import { Container } from '@components';
+import React from 'react';
 
-import { TitleContainer, Title } from './Slide.styles';
+import { Title, TitleContainer } from './Slide.styles';
 
 export interface ISlideProps {
   title: string;

@@ -3,14 +3,20 @@ import { LoadAssets, ThemeManager } from '@components';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Onboarding } from '@screens';
 import { fonts } from '@styles';
+import { screens } from '@constants';
 
-const AuthStack = createStackNavigator();
+type AuthStackParamList = {
+  [screens.ONBOARDING]: undefined;
+  [screens.WELCOME]: undefined;
+};
+
+const AuthStack = createStackNavigator<AuthStackParamList>();
 function AuthNavigator() {
   return (
     <AuthStack.Navigator>
       <AuthStack.Screen
         options={{ headerShown: false }}
-        name="Onboarding"
+        name={screens.ONBOARDING}
         component={Onboarding}
       />
     </AuthStack.Navigator>

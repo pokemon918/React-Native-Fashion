@@ -10,7 +10,6 @@ interface IThemeManagerProps {
 
 export function ThemeManager({ children }: IThemeManagerProps) {
   const colorMode = useColorScheme();
-  console.log(colorMode);
   return (
     <DripsyProvider theme={colorMode === 'dark' ? themeDark : theme}>
       {children}
