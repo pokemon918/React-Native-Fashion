@@ -18,7 +18,7 @@ export const TitleContainer = styled(View)(
 export const Title = styled(Text)({
   fontSize: 80,
   lineHeight: 80,
-  color: 'white',
+  color: '$textPrimary',
   textAlign: 'center',
   fontWeight: 'bold',
 });

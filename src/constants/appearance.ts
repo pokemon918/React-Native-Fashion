@@ -1,6 +1,7 @@
 export enum Colors {
   White = 'white',
   Black = 'black',
+  Transparent = 'transparent',
   Yellow = '#FFC641',
   Pink = '#FF87A2',
   Violet = '#442CB9',

@@ -57,10 +57,7 @@ export const Onboarding = () => {
           ))}
         </Pagination>
 
-        <SubslideContainer
-          width={width * SLIDES.length}
-          style={animatedFooter}
-        >
+        <SubslideContainer style={animatedFooter}>
           {SLIDES.map(({ subtitle, description }, index) => (
             <Subslide
               key={index}

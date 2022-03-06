@@ -52,3 +52,5 @@ export const SLIDES = [
     },
   },
 ];
+
+export const assets = SLIDES.map(({ picture }) => picture.src);

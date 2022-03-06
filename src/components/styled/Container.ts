@@ -1,16 +1,14 @@
 import { styled, View } from 'dripsy';
 import { height, width } from '@styles';
 
-interface IRowContainerProps {
+interface IContainerProps {
   row?: boolean;
   wWidth?: boolean;
   wHeight?: boolean;
   alignCenter?: boolean;
   spaceBetween?: boolean;
   justifyCenter?: boolean;
-  pt?: number;
-  pb?: number;
-  px?: number;
+  mt?: number;
 }
 
 export const Container = styled(View)(
@@ -21,10 +19,8 @@ export const Container = styled(View)(
     alignCenter,
     spaceBetween,
     justifyCenter,
-    pt,
-    pb,
-    px,
-  }: IRowContainerProps) => ({
+    mt,
+  }: IContainerProps) => ({
     flex: 1,
     ...(row && { flexDirection: 'row' }),
     ...(wWidth && { width }),
@@ -32,8 +28,6 @@ export const Container = styled(View)(
     ...(alignCenter && { alignItems: 'center' }),
     ...(spaceBetween && { justifyContent: 'space-between' }),
     ...(justifyCenter && { justifyContent: 'center' }),
-    ...(pt && { paddingTop: pt }),
-    ...(pb && { paddingBottom: pb }),
-    ...(px && { paddingHorizontal: px }),
+    ...(mt && { marginTop: mt }),
   }),
 );

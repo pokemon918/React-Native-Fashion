@@ -7,7 +7,7 @@ import { ButtonContainer } from './Button.styles';
 
 export interface IButtonProps {
   label: string;
-  variant: 'primary' | 'default';
+  variant?: 'primary' | 'default' | 'transparent';
   onPress: () => void;
   style?: RectButtonProperties['style'];
 }

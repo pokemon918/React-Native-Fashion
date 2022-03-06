@@ -10,7 +10,7 @@ export const Underlay = styled(Animated.View)({
   ...StyleSheet.absoluteFillObject,
   alignItems: 'center',
   justifyContent: 'flex-end',
-  borderBottomRightRadius: Radii.XL,
+  borderBottomRightRadius: 'xl',
   overflow: 'hidden',
 });
 

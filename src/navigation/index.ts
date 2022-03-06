@@ -1,2 +1,2 @@
-export * from './AuthNavigator/AuthStack';
-export * from './AuthNavigator/AuthStack.types';
+export * from './AuthStack/AuthStack';
+export * from './AuthStack/AuthStack.types';
