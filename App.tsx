@@ -1,5 +1,5 @@
 import { LoadAssets, ThemeManager } from '@components';
-import { AuthNavigator } from '@navigation';
+import { RootNavigator } from '@navigation';
 import { assets } from '@screens';
 import { fonts } from '@styles';
 import React from 'react';
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <LoadAssets {...{ fonts, assets }}>
       <ThemeManager>
-        <AuthNavigator />
+        <RootNavigator />
       </ThemeManager>
     </LoadAssets>
   );

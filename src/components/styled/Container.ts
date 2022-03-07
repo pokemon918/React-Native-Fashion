@@ -1,7 +1,9 @@
 import { styled, View } from 'dripsy';
 import { height, width } from '@styles';
+import type { Colors } from '@constants';
 
 interface IContainerProps {
+  flex?: number;
   row?: boolean;
   wWidth?: boolean;
   wHeight?: boolean;
@@ -9,10 +11,12 @@ interface IContainerProps {
   spaceBetween?: boolean;
   justifyCenter?: boolean;
   mt?: number;
+  bg?: Colors;
 }
 
 export const Container = styled(View)(
   ({
+    flex,
     row,
     wWidth,
     wHeight,
@@ -20,8 +24,10 @@ export const Container = styled(View)(
     spaceBetween,
     justifyCenter,
     mt,
+    bg,
   }: IContainerProps) => ({
     flex: 1,
+    ...(flex && { flex: flex }),
     ...(row && { flexDirection: 'row' }),
     ...(wWidth && { width }),
     ...(wHeight && { height }),
@@ -29,5 +35,6 @@ export const Container = styled(View)(
     ...(spaceBetween && { justifyContent: 'space-between' }),
     ...(justifyCenter && { justifyContent: 'center' }),
     ...(mt && { marginTop: mt }),
+    ...(bg && { backgroundColor: bg }),
   }),
 );

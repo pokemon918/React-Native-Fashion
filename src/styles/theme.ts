@@ -7,11 +7,13 @@ const colorsLight = {
   $bg: Colors.White,
   $textPrimary: Colors.White,
   $textDefault: Colors.Midnight,
+  $iconDefault: Colors.Midnight,
 };
 const colorsDark: typeof colorsLight = {
   ...colorsLight,
   $bg: Colors.Black,
   $textDefault: Colors.White,
+  $iconDefault: Colors.White,
 };
 
 export const theme = makeTheme({

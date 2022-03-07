@@ -1,12 +1,12 @@
 import React from 'react';
 import { screens } from '@constants';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Onboarding, Welcome } from '@screens';
 
-import type { AuthStackParamList } from './AuthStack.types';
+import type { AuthStackParams } from './AuthStack.types';
 
-const AuthStack = createStackNavigator<AuthStackParamList>();
-export function AuthNavigator() {
+const AuthStack = createNativeStackNavigator<AuthStackParams>();
+export function AuthStackNavigator() {
   return (
     <AuthStack.Navigator
       initialRouteName={screens.ONBOARDING}

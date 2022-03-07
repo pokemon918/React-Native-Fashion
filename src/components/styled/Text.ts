@@ -4,7 +4,7 @@ import { styled, Text as DripsyText } from 'dripsy';
 interface ITextProps {
   center?: boolean;
   mt?: number;
-  color?: keyof Theme;
+  color?: keyof Theme['colors'];
 }
 
 export const Text = styled(DripsyText, {

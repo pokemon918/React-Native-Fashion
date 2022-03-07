@@ -1,12 +1,12 @@
 import { Button } from '@components';
 import { screens } from '@constants';
-import type { AuthStackScreenProps } from '@navigation';
+import type { AuthStackNavigationProps } from '@navigation';
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 
 import {
-  SubslideContainer,
   Description,
+  SubslideContainer,
   Subtitle,
 } from './Subslide.styles';
 
@@ -25,15 +25,14 @@ export const Subslide = ({
   last,
   onScrollToPosition,
 }: ISubslideProps) => {
-  const nav =
-    useNavigation<AuthStackScreenProps<'Onboarding'>['navigation']>();
+  const nav = useNavigation<AuthStackNavigationProps>();
 
   const onPress = useCallback(() => {
     if (last) {
       nav.navigate(screens.WELCOME);
     }
     onScrollToPosition(index);
-  }, [index, last, nav, onScrollToPosition]);
+  }, [index, last, onScrollToPosition, nav]);
 
   return (
     <SubslideContainer>

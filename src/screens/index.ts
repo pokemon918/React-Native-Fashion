@@ -1,6 +1,7 @@
 // Screens
 export * from './Welcome/Welcome';
 export * from './Onboarding/Onboarding';
+export * from './OutfitIdeas/OutfitIdeas';
 
 // Assets
 import { assets as onboardingAssets } from './Onboarding/Onboarding.constants';

@@ -2,6 +2,7 @@ import { useDripsyTheme } from 'dripsy';
 import React from 'react';
 import { Text } from 'react-native';
 import type { RectButtonProperties } from 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { ButtonContainer } from './Button.styles';
 
@@ -21,8 +22,10 @@ export const Button = ({
   const { backgroundColor, color } = theme.button[variant];
 
   return (
-    <ButtonContainer onPress={onPress} style={{ backgroundColor }}>
-      <Text style={{ color }}>{label}</Text>
-    </ButtonContainer>
+    <GestureHandlerRootView>
+      <ButtonContainer onPress={onPress} style={{ backgroundColor }}>
+        <Text style={{ color }}>{label}</Text>
+      </ButtonContainer>
+    </GestureHandlerRootView>
   );
 };

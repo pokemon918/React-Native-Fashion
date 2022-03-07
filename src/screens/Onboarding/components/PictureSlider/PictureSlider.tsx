@@ -37,7 +37,11 @@ export const PictureSlider = ({
   }));
   return (
     <Underlay key={idx} style={animatedPicturesUnderlay}>
-      <Picture source={picture.src} />
+      <Picture
+        source={picture.src}
+        srcWidth={picture.width}
+        srcHeight={picture.height}
+      />
     </Underlay>
   );
 };

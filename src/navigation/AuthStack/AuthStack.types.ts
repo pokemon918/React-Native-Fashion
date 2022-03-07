@@ -1,10 +1,10 @@
 import type { screens } from '@constants';
-import type { StackScreenProps } from '@react-navigation/stack';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type AuthStackParamList = {
+export type AuthStackParams = {
   [screens.ONBOARDING]: undefined;
   [screens.WELCOME]: undefined;
 };
 
-export type AuthStackScreenProps<T extends keyof AuthStackParamList> =
-  StackScreenProps<AuthStackParamList, T>;
+export type AuthStackNavigationProps =
+  NativeStackNavigationProp<AuthStackParams>;
