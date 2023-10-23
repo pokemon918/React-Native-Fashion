@@ -9,4 +9,4 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Navigation](https://reactnavigation.org/)
 
-Inspired by William Candillon's youtube series.
+Inspired by William Candillon's youtube series, I implemented this.
