@@ -8,5 +8,3 @@
 - [Reanimated](https://github.com/software-mansion/react-native-reanimated)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Navigation](https://reactnavigation.org/)
-
-Inspired by William Candillon's youtube series, I implemented this.
